@@ -1,0 +1,3 @@
+Praveen, 22, prav@gmail.com
+Rajesh, 25, raj@gmail.com
+jaya, 30, jay@gmail.com
