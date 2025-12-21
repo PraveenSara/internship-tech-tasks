@@ -39,7 +39,6 @@ while choice < 4:
                 with open("users.txt","r") as f:
                     content = f.read()
                     print(content)
-                f.close()
             except Exception as e:
                 print(f"An error occurred: {e}")
 
