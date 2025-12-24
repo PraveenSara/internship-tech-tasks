@@ -20,7 +20,9 @@ from users.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/test', test_api),
-    path('api/users', list_users),
-    path('api/users/create', create_user),
+    path('api/test/', test_api),
+    path('api/users/', list_users),
+    path('api/users/create/', create_user),
+    path('api/login/', login_user),
+    path('api/secure-users/', secure_users)
 ]
