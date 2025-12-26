@@ -4,9 +4,10 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from rest_framework.response import Response
-from .models import User
 from .serializers import UserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth.hashers import check_password
+
 
 @api_view(['GET'])
 def test_api(request):
@@ -21,7 +22,7 @@ def list_users(request):
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
 
-@api_view(['POSt'])
+@api_view(['POST'])
 def create_user(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
@@ -35,22 +36,23 @@ def login_user(request):
     password = request.data.get('password')
 
     user = User.objects.filter(username=username).first()
-
-    if user is None:
-        return Response({"error": "User not found"}, status=404)
     
-    if not user.check_password(password):
-        return Response({"error": "Invalid Password"}, status=401)
+    if not user:
+        return Response({"error":"Invalid credentials"}, status=401)
+    
+    if not check_password(password, user.password):
+        return Response({"error":"Invalid credentials"}, status=401)
     
     refresh = RefreshToken.for_user(user)
 
     return Response({
-        "refresh": str(refresh),
-        "access": str(refresh.access_token)
-    })
+        "message":"Login successful",
+        "access": str(refresh.access_token),
+        "refresh": str(refresh)
+        })
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def secure_users(request):
-    users = User.objects.all().valuse('id','username','email')
+    users = User.objects.all().values('id','username','email')
     return Response(list(users))
