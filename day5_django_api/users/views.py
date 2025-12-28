@@ -56,3 +56,15 @@ def login_user(request):
 def secure_users(request):
     users = User.objects.all().values('id','username','email')
     return Response(list(users))
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def admin_users(request):
+    if not request.user.is_staff:
+        return Response(
+            {"error":"Admin access required"},
+            status=403
+        )
+    
+    users = User.objects.all().values('id', 'username', 'email')
+    return Response(list(users))

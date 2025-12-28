@@ -24,5 +24,6 @@ urlpatterns = [
     path('api/users/', list_users),
     path('api/users/create/', create_user),
     path('api/login/', login_user),
-    path('api/secure-users/', secure_users)
+    path('api/secure-users/', secure_users),
+    path('admin-users/', admin_users),
 ]
