@@ -10,4 +10,11 @@ Technology : Python, Cybersecurity
 Day 13 : 
   XSS is a web security vulnerability where attackers inject malicious JavaScript into a webpage that executes in users’ browsers.
   CSRF occurs when a malicious website tricks a logged-in user into performing actions without their consent. POST requests require CSRF tokens to verify that the request came from the legitimate site and not from an attacker.
+
+Day 14 :
+  SQL Injection → attacks database
+  Broken Authentication → attacks login
+  Sensitive Data Exposure → steals secrets
+  Broken Access Control → unauthorized access
+  Security Misconfiguration → wrong settings
   
