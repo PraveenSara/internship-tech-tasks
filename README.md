@@ -17,4 +17,15 @@ Day 14 :
   Sensitive Data Exposure → steals secrets
   Broken Access Control → unauthorized access
   Security Misconfiguration → wrong settings
+
+
+15 Days Internship Summary :
+  Tech stack:
+    Python, Django, Django REST Framework, JWT Authentication, SQLite.
   
+  Developed:
+    User APIs, Authentication system, Secure endpoints.
+  
+  Security concepts learned:
+  
+    SQL Injection prevention, JWT security, Role-based access, CSRF & XSS protection, OWASP Top 10 awareness.
