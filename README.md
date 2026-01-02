@@ -2,7 +2,7 @@
 A virtual self driven internship guided by ChatGPT to develop my skills
 
 Role : Software Engineer Intern
-Duration : 6-8 weeks
+Duration : 1 Month
 Technology : Python, Cybersecurity
 
 
@@ -19,7 +19,7 @@ Day 14 :
   Security Misconfiguration → wrong settings
 
 
-15 Days Internship Summary :
+Internship Summary :
   Tech stack:
     Python, Django, Django REST Framework, JWT Authentication, SQLite.
   
